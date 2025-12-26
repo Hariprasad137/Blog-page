@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs') %>
+<h1>Welcome to the Blog Page</h1>
+<a href="/create">Create new Posts</a>
+<h1>All Posts</h1>
+<% if(locals.posts && posts.length > 0){ %> 
+    <div class="posts-grid"> 
+        <% for(var i=0; i<posts.length;i++){ %>
+            <div class="card-container">
+                <p><%= posts[i].title %></p>
+                <p><%= posts[i].content %></p>
+                <p>By: <%= posts[i].author %></p>
+                <form action="/delete" method="POST">
+                    <input type="hidden" name="postId" value="<%= i %>">
+                    <button type="submit">Delete</button>
+                </form>
+            </div>
+        <% } %>
+    </div> 
+    <% } else { %>
+    <p style="text-align: center; color: #666;">No Posts yet</p>
+<% } %> <%- include('partials/footer.ejs') %>
