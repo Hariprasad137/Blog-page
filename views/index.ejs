@@ -1,21 +1,26 @@
 <%- include('partials/header.ejs') %>
-<h1>Welcome to the Blog Page</h1>
-<a href="/create">Create new Posts</a>
-<h1>All Posts</h1>
-<% if(locals.posts && posts.length > 0){ %> 
-    <div class="posts-grid"> 
-        <% for(var i=0; i<posts.length;i++){ %>
-            <div class="card-container">
-                <p><%= posts[i].title %></p>
-                <p><%= posts[i].content %></p>
-                <p>By: <%= posts[i].author %></p>
-                <form action="/delete" method="POST">
-                    <input type="hidden" name="postId" value="<%= i %>">
-                    <button type="submit">Delete</button>
-                </form>
-            </div>
-        <% } %>
-    </div> 
+
+<div class="container">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h1>All Posts</h1>
+        <a href="/create" class="read-more-btn" style="font-size: 1.1rem;">+ Create New Post</a>
+    </div>
+
+    <% if(locals.posts && posts.length > 0){ %> 
+        <div class="posts-grid"> 
+            <% posts.forEach(function(post, i){ %>
+                <div class="post-container">
+                    <h2><%= post.title %></h2>
+                    <p>
+                        <%= post.content.substring(0, 100) + "..." %>
+                    </p>
+                    <a href="/post/<%= i %>" class="read-more-btn">Read Article →</a>
+                </div>
+            <% }) %>
+        </div> 
     <% } else { %>
-    <p style="text-align: center; color: #666;">No Posts yet</p>
-<% } %> <%- include('partials/footer.ejs') %>
+        <p style="text-align: center; color: #666; margin-top: 2rem;">No Posts yet. Why not create one?</p>
+    <% } %> 
+</div>
+
+<%- include('partials/footer.ejs') %>

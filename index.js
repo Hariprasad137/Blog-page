@@ -25,6 +25,19 @@ app.post("/delete", (req, res) => {
     posts.splice(index, 1);
     res.redirect("/");
 })
+app.get("/post/:id", (req, res) => {
+  const index = req.params.id;
+  const requestedPost = posts[index];
+  if (requestedPost) {
+    res.render("post.ejs", { 
+      post: requestedPost, 
+      postId: index
+    });
+  } else {
+    res.redirect("/");
+  }
+});
 app.listen(port, () => {
   console.log(`Server Running on ${port}`);
 });
+
