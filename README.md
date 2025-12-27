@@ -1,4 +1,4 @@
-# 📝 Daily Journal / Blog Application
+# 📝 Blog Application
 
 A responsive, full-stack blog application built with **Node.js**, **Express**, and **EJS**. This project allows users to compose new journal entries, view a feed of recent posts, and read full articles on dynamically generated pages.
 
@@ -23,11 +23,11 @@ Follow these steps to run the project locally on your machine.
 
 **1. Clone the repository**
 ```bash
-git clone [https://github.com/hariprasad137/YOUR-REPO-NAME.git](https://github.com/hariprasad137/Blog-page.git)
+git clone [https://github.com/hariprasad137/Blog-page.git](https://github.com/hariprasad137/Blog-page.git)
 ```
 **2. Navigate to the project directory**
 ```bash
-cd YOUR-REPO-NAME
+cd Blog page
 ```
 **3. Install dependencies**
 ```bash
