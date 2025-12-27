@@ -37,7 +37,7 @@ npm install
 ```bash
 node index.js
 ```
-**5. View the application Open your web browser and go to: http://localhost:5173 (or whatever port you set in your code)**
+**5. View the application Open your web browser and go to: http://localhost:3000 (or whatever port you set in your code)**
 **Project Structure**
 ```bash
 ├── public/              # Static files (CSS, Images)
